@@ -1,8 +1,11 @@
+import Layout from "./Layout/Layout";
+import ProductsPage from "./pages/ProductsPage";
+
 function App() {
   return (
-    <>
-      <p>Click on the Vite and React logos to learn more</p>
-    </>
+    <Layout>
+      <ProductsPage />
+    </Layout>
   );
 }
 
