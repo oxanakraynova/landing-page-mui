@@ -5,7 +5,12 @@ import heroImage from "../assets/image6.png";
 function HeroSection() {
   return (
     <>
-      <Grid container alignItems="center" spacing={2}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="flex-start"
+      >
         <Grid item xs={12} md={4}>
           <Typography
             variant="h3"
@@ -36,7 +41,11 @@ function HeroSection() {
           item
           xs={12}
           md={8}
-          sx={{ display: "flex", alignItems: "flex-end" }}
+          sx={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "flex-end",
+          }}
         >
           <CardMedia
             sx={{ height: 320, width: 422, marginLeft: "auto" }}
