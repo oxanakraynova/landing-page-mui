@@ -50,9 +50,8 @@ function ProductCard({ product }: ProductCardProps) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        paddingBottom: "2rem",
+        borderRadius: "0.938rem",
+        background: "linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 100%)",
       }}
     >
       <Box sx={{ position: "relative" }}>
@@ -63,6 +62,7 @@ function ProductCard({ product }: ProductCardProps) {
           sx={{
             objectFit: "cover",
             height: "13.6rem",
+            width: "24.5rem",
             position: "relative",
           }}
         />
@@ -74,26 +74,30 @@ function ProductCard({ product }: ProductCardProps) {
             color: "white",
           }}
         >
-          <Typography variant="subtitle2">
+          <Typography variant="body2" fontWeight="bold">
             {product.rating.rate + "/5"}
           </Typography>
         </Box>
       </Box>
       <CardContent
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          padding: "2rem",
+        }}
       >
         <Typography
           variant="h5"
           fontWeight="bold"
           color={theme.palette.primary.main}
           style={{
-            paddingTop: "2rem",
             paddingBottom: "2rem",
           }}
         >
           {truncateString(product.title, 60)}
         </Typography>
-        <Typography variant="body2" color={theme.palette.primary.main}>
+        <Typography variant="body1" color={theme.palette.primary.main}>
           {truncateString(product.description, 142)}
         </Typography>
       </CardContent>
@@ -103,7 +107,7 @@ function ProductCard({ product }: ProductCardProps) {
           color="primary"
           onClick={handleClick}
           disabled={!product.image}
-          sx={{ marginTop: "3rem", marginLeft: "2rem" }}
+          sx={{ marginTop: "3rem", marginLeft: "2rem", marginBottom: "2rem" }}
         >
           Detail produktu
         </ColorButton>
