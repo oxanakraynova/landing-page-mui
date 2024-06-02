@@ -24,6 +24,19 @@ let theme = createTheme({
     body1: { fontSize: 16 },
     body2: { fontSize: 13 },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          width: "100%",
+          height: "38.813rem",
+          background:
+            "linear-gradient(180deg, #FEE694 0%, rgba(254, 230, 148, 0) 100%)",
+          backgroundRepeat: "no-repeat",
+        },
+      },
+    },
+  },
 });
 
 theme = responsiveFontSizes(theme);
