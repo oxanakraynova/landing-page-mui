@@ -8,22 +8,22 @@ function HeroSection() {
       <Grid container alignItems="center" spacing={2}>
         <Grid item xs={12} md={4}>
           <Typography
-            variant="h6"
+            variant="h3"
+            fontWeight="bold"
             color={theme.palette.secondary.main}
             style={{ paddingTop: "2.5rem", paddingBottom: "1.75rem" }}
           >
             EYEBROW IPSUM
           </Typography>
           <Typography
-            variant="h4"
-            component="h1"
+            variant="h1"
             fontWeight="bold"
             color={theme.palette.primary.main}
           >
             Lorem ipsum
           </Typography>
           <Typography
-            variant="body1"
+            variant="h3"
             color={theme.palette.primary.main}
             style={{ paddingTop: "2.5rem", paddingBottom: "7.5rem" }}
           >
@@ -39,7 +39,7 @@ function HeroSection() {
           sx={{ display: "flex", alignItems: "flex-end" }}
         >
           <CardMedia
-            sx={{ height: 320, width: 422 }}
+            sx={{ height: 320, width: 422, marginLeft: "auto" }}
             image={heroImage}
             title="shopImage"
           />
