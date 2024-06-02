@@ -103,8 +103,10 @@ function ProductCard({ product }: ProductCardProps) {
       </CardContent>
       <CardActions>
         <ColorButton
+          disableElevation
+          style={{ textTransform: "none" }}
           variant="contained"
-          color="primary"
+          backgroundColor={theme.palette.success.main}
           onClick={handleClick}
           disabled={!product.image}
           sx={{ marginTop: "3rem", marginLeft: "2rem", marginBottom: "2rem" }}

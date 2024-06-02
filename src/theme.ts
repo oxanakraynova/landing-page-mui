@@ -9,6 +9,12 @@ let theme = createTheme({
     secondary: {
       main: "#61908E",
     },
+    info: {
+      main: "#AAE8C3",
+    },
+    success: {
+      main: "#7FC109",
+    },
   },
   typography: {
     fontSize: 16,
