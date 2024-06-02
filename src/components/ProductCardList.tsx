@@ -45,11 +45,11 @@ function ProductCardList({ sortingOption }: ProductCardListProps) {
     <>
       <Grid
         container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
+        spacing={{ xs: "1rem", sm: "1.5rem", md: "1.75rem", lg: "2rem" }}
+        columns={{ xs: 6, sm: 9, md: 9, lg: 12 }}
       >
         {sortedProducts.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4}>
+          <Grid item key={product.id} xs={12} sm={6} md={4} lg={4}>
             <ProductCard product={product} />
           </Grid>
         ))}

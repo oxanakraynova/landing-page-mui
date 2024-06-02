@@ -12,7 +12,6 @@ function HeroSection() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
   const isTablet = useMediaQuery(theme.breakpoints.up("md"));
-  // const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <>

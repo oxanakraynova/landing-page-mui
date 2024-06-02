@@ -5,8 +5,6 @@ import {
   Typography,
   CardActions,
   Box,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import { categoryImages } from "../enums/CategoryEnum";
 import appTheme from "../theme";
