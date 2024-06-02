@@ -5,9 +5,11 @@ import {
   Typography,
   CardActions,
   Box,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { categoryImages } from "../enums/CategoryEnum";
-import theme from "../theme";
+import appTheme from "../theme";
 import { ColorButton } from "../UI/CustomButton";
 
 export interface Product {
@@ -90,26 +92,32 @@ function ProductCard({ product }: ProductCardProps) {
         <Typography
           variant="h5"
           fontWeight="bold"
-          color={theme.palette.primary.main}
+          color={appTheme.palette.primary.main}
           style={{
             paddingBottom: "2rem",
           }}
         >
           {truncateString(product.title, 60)}
         </Typography>
-        <Typography variant="body1" color={theme.palette.primary.main}>
+        <Typography variant="body1" color={appTheme.palette.primary.main}>
           {truncateString(product.description, 142)}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions style={{ position: "relative", height: "100vh" }}>
         <ColorButton
           disableElevation
-          style={{ textTransform: "none" }}
+          style={{
+            textTransform: "none",
+            position: "absolute",
+            marginTop: "2rem",
+            bottom: "2rem",
+            left: "2rem",
+            zIndex: 1000,
+          }}
           variant="contained"
-          backgroundColor={theme.palette.success.main}
+          backgroundColor={appTheme.palette.success.main}
           onClick={handleClick}
           disabled={!product.image}
-          sx={{ marginTop: "3rem", marginLeft: "2rem", marginBottom: "2rem" }}
         >
           Detail produktu
         </ColorButton>
