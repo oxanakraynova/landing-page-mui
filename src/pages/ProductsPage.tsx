@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import ProductCardList from "../components/ProductCardList";
 import CustomTab from "../UI/CustomTab";
@@ -15,7 +14,6 @@ function ProductsPage() {
       <HeroSection />
       <CustomTab onChange={handleSortingChange} sortingOption={sortingOption} />
       <ProductCardList sortingOption={sortingOption} />
-      <Footer />
     </>
   );
 }
