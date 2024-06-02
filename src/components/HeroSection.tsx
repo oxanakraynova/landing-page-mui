@@ -1,6 +1,6 @@
 import { CardMedia, Grid, Typography } from "@mui/material";
 import theme from "../theme";
-import heroImage from "../../assets/image 6.png";
+import heroImage from "../assets/image6.png";
 
 function HeroSection() {
   return (

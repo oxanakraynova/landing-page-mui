@@ -6,6 +6,7 @@ import {
   CardActions,
   Box,
 } from "@mui/material";
+import { categoryImages } from "../enums/CategoryEnum";
 import theme from "../theme";
 import { ColorButton } from "../UI/CustomButton";
 
@@ -33,6 +34,14 @@ function ProductCard({ product }: ProductCardProps) {
       ? string.substring(0, maxLength) + "..."
       : string;
   };
+  const imageSrc =
+    categoryImages[product.category as keyof typeof categoryImages];
+
+  const handleClick = () => {
+    if (product.image) {
+      window.open(product.image, "_blank");
+    }
+  };
   return (
     <Card
       sx={{
@@ -50,12 +59,11 @@ function ProductCard({ product }: ProductCardProps) {
         <CardMedia
           component="img"
           alt="Product Image"
-          src={product.image}
+          src={imageSrc}
           sx={{
-            objectFit: "contain",
+            objectFit: "cover",
             height: "13.6rem",
             position: "relative",
-            backgroundColor: "#BFDBDC",
           }}
         />
         <Box
@@ -93,6 +101,8 @@ function ProductCard({ product }: ProductCardProps) {
         <ColorButton
           variant="contained"
           color="primary"
+          onClick={handleClick}
+          disabled={!product.image}
           sx={{ marginTop: "3rem", marginLeft: "2rem" }}
         >
           Detail produktu
