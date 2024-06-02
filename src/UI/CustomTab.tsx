@@ -2,7 +2,7 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material";
+import { styled, useMediaQuery, useTheme } from "@mui/material";
 
 interface CustomTabProps {
   onChange: (newValue: string) => void;
@@ -28,6 +28,10 @@ const StyledTabs = styled(Tabs)(({ theme }) => ({
 }));
 
 export default function CustomTab({ onChange, sortingOption }: CustomTabProps) {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
+  const isTablet = useMediaQuery(theme.breakpoints.up("md"));
+
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     onChange(newValue);
   };
@@ -40,7 +44,10 @@ export default function CustomTab({ onChange, sortingOption }: CustomTabProps) {
         textColor="secondary"
         indicatorColor="secondary"
         aria-label="sorting tabs"
-        style={{ marginBottom: "3.75rem" }}
+        style={{
+          marginBottom: "3.75rem",
+          marginTop: isDesktop ? "7.5rem" : isTablet ? "3.75rem" : "3rem",
+        }}
       >
         <StyledTab
           value="best"

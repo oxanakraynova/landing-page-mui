@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import theme from "../theme";
+import appTheme from "../theme";
 import { ColorButton } from "../UI/CustomButton";
 
 interface ButtonProps {
@@ -13,8 +13,8 @@ function Footer({ onClick }: ButtonProps) {
         <ColorButton
           disableElevation
           variant="contained"
-          backgroundColor={theme.palette.info.main}
-          textColor={theme.palette.primary.main}
+          backgroundColor={appTheme.palette.info.main}
+          textColor={appTheme.palette.primary.main}
           onClick={onClick}
           style={{
             textAlign: "center",

@@ -1,7 +1,7 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // A custom theme for this app
-let theme = createTheme({
+let appTheme = createTheme({
   palette: {
     primary: {
       main: "#024E40",
@@ -39,6 +39,6 @@ let theme = createTheme({
   },
 });
 
-theme = responsiveFontSizes(theme);
+appTheme = responsiveFontSizes(appTheme);
 
-export default theme;
+export default appTheme;
