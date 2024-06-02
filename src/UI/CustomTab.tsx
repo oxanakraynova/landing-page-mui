@@ -3,25 +3,28 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
-export default function CustomTab() {
-  const [value, setValue] = React.useState("one");
+interface CustomTabProps {
+  onChange: (newValue: string) => void;
+  sortingOption: string;
+}
 
+export default function CustomTab({ onChange, sortingOption }: CustomTabProps) {
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+    onChange(newValue);
   };
 
   return (
     <Box sx={{ width: "100%" }}>
       <Tabs
-        value={value}
+        value={sortingOption}
         onChange={handleChange}
         textColor="secondary"
         indicatorColor="secondary"
-        aria-label="secondary tabs example"
+        aria-label="sorting tabs"
         style={{ marginBottom: "3.75rem" }}
       >
-        <Tab value="one" label="Nejlepší" sx={{ marginRight: "1rem" }} />
-        <Tab value="two" label="Nejhorší" />
+        <Tab value="best" label="Nejlepší" sx={{ marginRight: "1rem" }} />
+        <Tab value="worst" label="Nejhorší" />
       </Tabs>
     </Box>
   );
