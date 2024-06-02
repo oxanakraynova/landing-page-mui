@@ -1,22 +1,20 @@
-import { Container, CssBaseline } from "@mui/material";
+import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
+import theme from "../theme";
 
 function Layout(props: { children: React.ReactNode }) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
         style={{
-          marginTop: "7.5rem",
-          marginLeft: "9.125rem",
-          marginRight: "9.125rem",
-          marginBottom: "7.5rem",
+          padding: "7.5rem 9.125rem",
         }}
       >
         {props.children}
       </Container>
-    </>
+    </ThemeProvider>
   );
 }
 

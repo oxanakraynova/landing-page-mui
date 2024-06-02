@@ -5,12 +5,14 @@ import axios from "axios";
 
 function ProductCardList() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [limit, setLimit] = useState<number>(6);
+  const [offset, setOffset] = useState<number>(0);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "https://fakestoreapi.com/products?limit=6"
+          `https://fakestoreapi.com/products?limit=${limit}&offset=${offset}`
         );
         setProducts(response.data);
       } catch (error) {
@@ -20,8 +22,13 @@ function ProductCardList() {
     };
     fetchProducts();
   }, []);
+
   return (
-    <Grid container spacing={{ xs: 2, sm: 5, md: 10, lg: 15 }}>
+    <Grid
+      container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 4, sm: 8, md: 12 }}
+    >
       {products.map((product) => (
         <Grid item key={product.id} xs={12} sm={6} md={4}>
           <ProductCard product={product} />
