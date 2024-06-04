@@ -10,7 +10,7 @@ interface CustomTabProps {
 }
 
 const StyledTab = styled(Tab)(({ theme }) => ({
-  color: theme.palette.text.secondary,
+  color: theme.palette.secondary.main,
   borderRadius: theme.shape.borderRadius,
   margin: theme.spacing(0.5),
   padding: theme.spacing(1, 3),
