@@ -46,7 +46,7 @@ function ProductCard({ product }: ProductCardProps) {
     <Card
       sx={{
         width: "24.5rem",
-        height: "39.1rem",
+        height: "fit-content",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
@@ -95,22 +95,18 @@ function ProductCard({ product }: ProductCardProps) {
             paddingBottom: "2rem",
           }}
         >
-          {truncateString(product.title, 60)}
+          {truncateString(product.title, 17)}
         </Typography>
         <Typography variant="body1" color={appTheme.palette.primary.main}>
           {truncateString(product.description, 142)}
         </Typography>
       </CardContent>
-      <CardActions style={{ position: "relative", height: "100vh" }}>
+      <CardActions style={{ paddingLeft: "2rem" }}>
         <ColorButton
-          disableElevation
           style={{
             textTransform: "none",
-            position: "absolute",
-            marginTop: "2rem",
+            marginTop: "3rem",
             bottom: "2rem",
-            left: "2rem",
-            zIndex: 1000,
           }}
           variant="contained"
           backgroundColor={appTheme.palette.success.main}

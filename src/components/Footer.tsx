@@ -11,7 +11,6 @@ function Footer({ onClick }: ButtonProps) {
     <>
       <Box padding="2rem" display="flex" justifyContent="center">
         <ColorButton
-          disableElevation
           variant="contained"
           backgroundColor={appTheme.palette.info.main}
           textColor={appTheme.palette.primary.main}
